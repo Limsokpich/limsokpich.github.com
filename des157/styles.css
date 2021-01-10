@@ -1,23 +1,109 @@
+.header {
+    width: 1200px;
+    min-width: 800px;
+    background-color: lavenderblush;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
 #banner {
     width: 800px;
     height: 250px;
-    background-color: aquamarine;
+    background-color: lavender;
+    margin: 30px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    border: 2px solid lightsalmon;
 }
 
-#container {
-    display: flex;
-    flex-direction: row;
+#bar {
+    width: 100px;
+    height: 115px;
+    margin: 0 auto;
+    margin-top: 58px;
+    border: 3px solid lightsalmon;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 10px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: black;    
+}
+
+#bar:hover {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color:  rgb(245, 66, 66);
+    color: white;
+    transition: all 100ms;
+    width: 795px;
+    transition: width 1s;
+}
+
+
+h3 {
+    opacity: 0;
+}
+
+h3:hover {
+    opacity: 1;
+    transition: 2s all;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+li {
+    margin: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 a:link {
     text-decoration: none;
 }
 
-ul {
-    list-style-type: none
+a:hover {
+    background-color: white;
 }
 
-div {
+body {
+    font-family: 'Montserrat', sans-serif;
+    align-content: center;
+}
+
+#container {
     display: flex;
-    flex-direction: row;
+    justify-content: space-evenly;
+    width: 1200px;
+    min-width: 800px;
+    background-color: lavenderblush;
+    /* background-image: linear-gradient(to bottom left, lavenderblush, lightpink); */
+    color: sienna;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.leftcol, .midcol, .rightcol {
+    background-color: mistyrose;
+    padding-top: 0px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer a:hover {
+    background-color: lavenderblush;
 }
