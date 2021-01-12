@@ -43,6 +43,9 @@
     transition: width 1s;
 }
 
+h2 {
+    margin-top: 30px;
+}
 
 h3 {
     opacity: 0;
@@ -83,7 +86,6 @@ body {
     width: 1200px;
     min-width: 800px;
     background-color: lavenderblush;
-    /* background-image: linear-gradient(to bottom left, lavenderblush, lightpink); */
     color: sienna;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -96,6 +98,7 @@ body {
     padding-right: 35px;
     margin-top: 15px;
     margin-bottom: 15px;
+    border: 1px solid lightsalmon;
 }
 
 .footer {
