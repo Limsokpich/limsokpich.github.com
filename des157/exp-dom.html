@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation</title>
+</head>
+
+<body>
+
+    <h1>JS Experimentation: Guessing Your Number Game</h1>
+
+    <!-- This is a guessing number game where the user inputs a number between 1 and 10. The guess the user input by generating a random number 
+        between 1 and 10. It will keep guessing until the user says it's correct. At the end of the game it will tell the user thanks for playing 
+        and a tells the user to treat themselves with a randomly generated food from the array list -->
+
+    <script>
+
+        var userInput = prompt('Please pick a whole number between 1 and 10', '');
+
+        //checking user input
+        if (userInput < 11 && userInput > 0) { 
+            console.log('I will now try to guess your number');
+
+            //randomizing number generator code
+            function randomInt(min, max) {
+                return Math.floor( (max - min + 1) * Math.random() ) + min;
+            }
+
+            console.log(`You entered number ${randomInt(1, 10)}`);
+
+            //outputting verification comment
+            var userResponse = prompt('Did I guess correct. Answer yes or no:', '').toLowerCase();
+
+            foods = ["cookie", "ice cream", "cake", "chocolate"];
+            
+            //checking for correct answer/number
+            if (userResponse === 'yes') {
+                console.log(`Thanks for playing, you deserve an ${foods[(randomInt(0, 3))]}`);
+            } 
+
+            //if no, computer tries again
+            while (userResponse == 'no') {
+                console.log(`You entered number ${randomInt(1, 10)}`);
+                var guessResponse = prompt('Did I guess correct. Answer yes or no:', '').toLowerCase();
+
+                //if yes, get out of while loop 
+                if (guessResponse === 'yes') {
+                    console.log(`Thanks for playing, you deserve an ${foods[(randomInt(0, 3))]}`);
+                    break;
+                }
+            }
+
+            //if didn't repsond to verification 
+            if (userResponse == null || userResponse == '') {
+                console.log('You didnt answer');
+            }
+        }
+
+        //if didn't to entering a number prompt 
+        else {
+            console.log('You didnt answer');
+        }
+
+    </script>
+
+</body>
+</html>
