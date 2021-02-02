@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <title>A Hogwarts MadLibs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <article id="container">
+
+        <section class="heading">
+            <header>
+                <h1>A Hogwarts Story</h1>
+            </header>
+        </section>
+        
+        <section class="forms">
+            <main>
+                <form id="myForm" method="POST">
+
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" required>
+                    <br>
+                    <br>
+        
+                    <label for="animal">Animal:</label>
+                    <input type="text" id="animal" required>
+                    <br>
+                    <br>
+        
+                    <label for="friend1">Friend 1:</label>
+                    <input type="text" id="friend1" required>
+                    <br>
+                    <br>
+        
+                    <label for="friend2">Friend 2:</label>
+                    <input type="text" id="friend2" required>
+                    <br>
+                    <br>
+                    
+                    <label for="house">House:</label>
+                    <select name="house" id="house" required>
+                        <option value="">Select House</option>
+                        <option value="gryffindor">Gryffindor</option>
+                        <option value="slytherin">Slytherin</option>
+                        <option value="ravenclaw">Ravenclaw</option>
+                        <option value="hufflepuff">Hufflepuff</option>
+                    </select>
+                    <br>
+                    <br>
+        
+                    <label for="character1">Character 1:</label>
+                    <select name="character1" id="character1" required>
+                        <option value="">Select Character 1</option>
+                        <option value="harrypotter">Harry Potter</option>
+                        <option value="herminone">Herminone</option>
+                        <option value="ron">Ron</option>
+                        <option value="dracomalfoy">Draco Malfoy</option>
+                        <option value="dumbledore">Dumbledore</option>
+                        <option value="voldemort">Voldemort</option>
+                        <option value="mcGonagall">Professor McGonagall</option>
+                        <option value="snape">Professor Snape</option>
+                        <option value="bellatrix">Bellatrix</option>
+                        <option value="hagrid">Hagrid</option>
+                        <option value="luna">Luna</option>
+                        <option value="dobby">Dobby</option>
+                    </select>
+                    <br>
+                    <br>
+        
+                    <label for="character2">Character 2:</label>
+                    <select name="character2" id="character2" required>
+                        <option value="">Select Character 2</option>
+                        <option value="harrypotter">Harry Potter</option>
+                        <option value="herminone">Herminone</option>
+                        <option value="ron">Ron</option>
+                        <option value="dracomalfoy">Draco Malfoy</option>
+                        <option value="dumbledore">Dumbledore</option>
+                        <option value="voldemort">Voldemort</option>
+                        <option value="mcGonagall">Professor McGonagall</option>
+                        <option value="snape">Professor Snape</option>
+                        <option value="bellatrix">Bellatrix</option>
+                        <option value="hagrid">Hagrid</option>
+                        <option value="luna">Luna</option>
+                        <option value="dobby">Dobby</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label for="character3">Character 3:</label>
+                    <select name="character3" id="character3" required>
+                        <option value="">Select Character 3</option>
+                        <option value="harrypotter">Harry Potter</option>
+                        <option value="herminone">Herminone</option>
+                        <option value="ron">Ron</option>
+                        <option value="dracomalfoy">Draco Malfoy</option>
+                        <option value="dumbledore">Dumbledore</option>
+                        <option value="voldemort">Voldemort</option>
+                        <option value="mcGonagall">Professor McGonagall</option>
+                        <option value="snape">Professor Snape</option>
+                        <option value="bellatrix">Bellatrix</option>
+                        <option value="hagrid">Hagrid</option>
+                        <option value="luna">Luna</option>
+                        <option value="dobby">Dobby</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label for="transportation">Transportation:</label>
+                    <select name="transportation" id="transportation" required>
+                        <option value="">Select Transportation</option>
+                        <option value="portkey">Portkey</option>
+                        <option value="broomstick">Broomstick</option>
+                        <option value="train">Train</option>
+                        <option value="enchantedvehicles">Enchanted Vehicles</option>
+                        <option value="flyinghorse">Flying Horse</option>
+                        <option value="knightbus">Knight Bus</option>
+                        <option value="hippogriffs">Hippogriffs</option>
+                        <option value="timetuner">Time-turner</option>
+                    </select>
+                    <br>
+                    <br>
+                    <br>
+
+                    <input type="submit" value="Submit" class="open">
+
+                </form>
+            </main>
+        </section> 
+
+        <section id="overlay" class="hidden">
+            <article>
+
+                <h1>Welcome to the Wizarding School of Hogwarts</h1>
+    
+                <!--<p></p><span id="beg">Dear </span><span id="nameOfUser">${userName},</span></p>-->
+
+                <p id="beg">Dear <span id="userName">${userName}</span>,</p>
+                <p id="mid">You have been invited to attend the Wizarding School of Hogwarts. As one of the many chosen ones, you will experience a new life 
+                    of many magical adventures. Please be ready to meet, <span class="char1">${character1}</span>, who will be your mentor through out your 
+                    experience as a wizard in training. Your <span class="ani">${animal}</span> will be your companion to the academy. <span class="frie1">${friend1}</span>
+                    and <span class="frie2">${friend2}</span> have receive this invitation as well and will be in the same dorming group as you. I hope you will 
+                    be excited to meet your house family, <span class="hous">${house}</span>, who will be waiting for you when you arrive. You will learn spells 
+                    and train to defeat your greatest threat, <span class="char2">${character2}</span>. A <span class="trans">${transportation}</span>, 
+                    is ready to pick you up tommorrow morning. We look forward to meeting you, <span class="nameOfUser">${userName}</span>.
+                </p>
+                <p id="end">Sincerely, <span class="char3">${character3}</span></p>
+                <button class="replay close">Play again!</button>
+                <button class="corner close">&otimes;</button>
+
+            </article>
+        </section>      
+
+    </article>
+
+    <footer class="footer">
+        <p><a href="&#108;&#105;&#109;&#115;&#117;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Contact me</a> | <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
+    </footer>
+    
+</body>
+</html>

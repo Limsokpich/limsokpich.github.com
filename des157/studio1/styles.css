@@ -1,0 +1,131 @@
+body {
+    background-color: darkgray;
+    background-image: url(images/initalbg.JPG);
+    background-size: 1200px;
+}
+
+/*seperates the sections*/
+.heading, .forms { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    background-color: lightgray;
+    border-radius: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.heading {
+    font-family: 'Cinzel', serif;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.forms {
+    font-family: 'Cinzel', serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+/*interactive feeback for users when they click on the input field, it expands*/
+input[type=text] {
+    width: 100px;
+    transition: ease-in-out, width .35s ease-in-out;
+  }
+  
+input[type=text]:focus {
+    width: 200px; /*how much the input field expands*/
+}
+
+/*when overlay is hidden*/
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/*when overlay is shown*/
+.showing {
+    visibility: showing;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    background-image: url(images/overlaybg.JPG);
+    background-size: 1100px;    
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+input, select {
+    color: red;
+}
+
+#overlay article {
+    font-family: 'New Rocker', cursive;
+    box-sizing: border-box;
+    background-color: lightyellow;
+    padding: 20px;
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px 15px;
+    text-align: center;
+}
+
+#overlay article h1 {
+    font-size: 37px;
+}
+
+#overlay article p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.replay {
+    position: relative;
+    bottom: -35px;
+    font-size: 25px;
+    transition-duration: 3ms;
+    transition-timing-function: ease;
+}
+
+.corner {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+    transition-duration: 3ms;
+    transition-timing-function: ease;
+}
+
+.footer {
+    font-family: 'Cinzel', serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer a:hover {
+    background-color: white;
+}
