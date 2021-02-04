@@ -35,6 +35,10 @@
             ${transportation}, is ready to pick you up tommorrow morning. We look forward to meeting you, ${userName}.`;
             
             var myEnd = `Sincerely, ${character3}`;
+
+            for (var i=0; i<myBeg.length; i++) {
+                myBeg[1].style.color = "red";
+            };
         } 
         else { 
             const myText = "Do you not wish to attend Hogwart?";
