@@ -1,0 +1,43 @@
+body {
+    background-color: midnightblue;
+    font-family: 'Bangers', cursive;
+}
+
+.instruct {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+}
+
+.contain {
+    height: auto;
+    position: relative;
+}
+
+.center  {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 30px;
+    cursor: pointer;
+    display: inline-block;
+    justify-content: center;
+}
+
+.play {
+    color: tomato;
+}
+
+.play:hover {
+    background-color: tomato;
+    color: white;
+}

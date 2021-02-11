@@ -101,6 +101,29 @@ img {
     margin-top: 70px;
 }
 
+.myimg {
+    width: 400px;
+    height: 450px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.otherimg {
+    margin-top: 20px;
+    height: 450px;
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+figure {
+    text-align: center;
+}
+
 p {
     line-height: 1.9;
 }
@@ -131,6 +154,10 @@ h3 {
     padding-left: 100px;
     padding-right: 100px;
     margin-bottom: 20px;
+}
+
+.j4Header {
+    margin-top: 30px;
 }
 
 .closing {

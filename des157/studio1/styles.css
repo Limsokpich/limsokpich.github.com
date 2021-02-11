@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 500px;
-    background-color: lightgray;
+    background-color: darkgray;
     border-radius: 30px;
     margin: 0 auto;
     text-align: center;
