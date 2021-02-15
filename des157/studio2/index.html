@@ -13,53 +13,57 @@
 </head>
 
 <body>
-    <main>
-        <section id="intro">
-            <div><img src="" alt=""></div>
-            <article>
-                <p class="instruct">Picture this:</p>
-            </article>
-        </section>
-
+    <article id="intro">
+        <p class="instruct">Picture this:</p>
         <div class="contain">
-            <div class="center">
-                <button class="btn play">Play</button>
-            </div>
+            <input class="btn play" type="button" value="Play"  />
         </div>
-    
-        <section id="img1">
-            <div><img src="" alt=""></div>
-            <article>
-                <p>In a season of transitioning, one tree shares the summer and winter. It seems to collide but it shares 
-                    the sun and moon.</p>
-            </article>
-        </section>
-    
-        <section id="img2">
-            <div><img src="" alt=""></div>
-            <article>
-                <p>One evening, you drive your car pass the noisy and lit city lights into a quiet getaway.</p>
-            </article>
-        </section>
-    
-        <section id="img3">
-            <div><img src="" alt=""></div>
-            <article>
-                <p>In the forest you see nothing but the moon and the cloud hovering over the dark skies. The reflection of 
-                    the water pulls you into an image of yourself.</p>
-            </article>
-        </section>
-    
-        <section id="img4">
-            <div><img src="" alt=""></div>
-            <article>
-                <p>A reflection of the mysterious you you had not imagined. Ending your night, you said to yourself, "The 
-                    future is mine to hold."</p>
-            </article>
-        </section>
-    </main>
+    </article>
 
-    <footer class="footer">
+    <article id="overlay" class="hidden">
+        <section id="story1">
+            <article class="text1">
+                <p>"In a season of transitioning, one tree shares the summer and winter. It seems to collide but it shares 
+                        the sun and moon."</p>
+            </article>
+            <div>
+                <img class="tree" src="images/tree1.jpg" alt="tree">
+            </div>
+        </section>
+    
+        <section id="story2">
+            <article class="text2">
+                <p>"One evening, you drive your car pass the noisy and lit city lights into a quiet getaway."</p>
+            </article>
+            <div>
+                <img class="lake" src="images/car2.jpg" alt="lake">
+            </div>
+        </section>
+    
+        <section id="story3">
+            <article class="text3">
+                <p>"In the forest you see nothing but the moon and the cloud hovering over the dark skies. The reflection of 
+                    the water pulls you into an image of yourself."</p>
+            </article>
+            <div>
+                <img class="car" src="images/lake3.jpg" alt="car">
+            </div>
+        </section>
+    
+        <section id="story4">
+            <article class="text4">
+                <p>"A reflection of the mysterious you you had not imagined. Ending your night, you said to yourself, "The 
+                    future is mine to hold.""</p>
+            </article>
+            <div>
+                <img class="person" src="images/mperson.jpg" alt="person">
+            </div>
+        </section>
+
+        <button class="corner close">&otimes;</button>
+    </article>
+
+    <footer>
         <p><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
     </footer>
 

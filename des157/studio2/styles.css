@@ -1,26 +1,26 @@
 body {
-    background-color: midnightblue;
     font-family: 'Bangers', cursive;
+    position: relative;
+    background-color: midnightblue;
+    height: 100%;    
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 720px; /* prevents the page this page from scrollable*/
 }
 
 .instruct {
     color: white;
     font-size: 100px;
-    text-align: center;
 }
 
 .contain {
     height: auto;
     position: relative;
-}
-
-.center  {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 
 .btn {
@@ -35,9 +35,139 @@ body {
 
 .play {
     color: tomato;
+    letter-spacing: 1px;
 }
 
 .play:hover {
     background-color: tomato;
     color: white;
+}
+
+/* create overlay visability property */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: showing;
+    opacity: 1;
+}
+
+#overlay {
+    width: 100vw;
+    height: 100vh;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+    overflow-y: scroll; /* enables the overlay to be scrollable */
+    text-align: center;
+    background-color: midnightblue;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+img {
+    width: 1200px;
+    height: 768px;
+}
+
+.person {
+    width: 1200px;
+    height: 1300px;
+}
+
+/* create a zoom in and out property */
+.zoomIn {
+    transform: scale(0.5 1); 
+    transform-origin: -50% -50%;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.zoomOut {
+    transform: scale(0);
+    transform-origin: -50% -50%;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    /* -put transition over time property */
+}
+
+/* story text box decorations*/
+.text1, .text2, .text3, .text4 {
+    display: flex;
+    font-size: 17px;
+    background: white;
+    border-radius: 15px 10px 30px 5px;
+    border-style: solid;
+    border-color: tomato;
+    padding: 20px; 
+    width: 500px;
+    height: 50px; 
+    letter-spacing: 1px;
+}
+
+/* text box position */
+.text1 {
+    position: absolute;
+    left: 450px;
+    top: 10px;
+}
+
+.text2 {
+    position: absolute;
+    left: 30px;
+    top: 850px;
+}
+
+.text3 {
+    position: absolute;
+    left: 40px;
+    top: 1760px;
+}
+
+.text4 {
+    position: absolute;
+    right: 40px;
+    top: 2380px;
+}
+
+p {
+    margin-top: 9px;
+}
+
+/* close button */
+.corner {
+    font-size: 35px;
+    color: tomato;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin-bottom: 0px;
+}
+
+footer a:hover {
+    background-color: tomato;
+}
+
+footer a {
+    letter-spacing: 1px;
+    color: tomato;
 }
