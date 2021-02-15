@@ -81,11 +81,11 @@ window.addEventListener('load', function() {
             document.getElementsByClassName('tree').className = 'zoomOut';
             document.getElementsByClassName('car').className = 'zoomIn';
         }
-        if (pageTop == postTops[2]/2) {
+        if (pageTop == postTops[2] + 386) {
             document.getElementsByClassName('car').className = 'zoomOut';
             document.getElementsByClassName('lake').className = 'zoomIn';
         }
-        if (pageTop == postTops[3]/2) {
+        if (pageTop == postTops[3] + 386) {
             document.getElementsByClassName('lake').className = 'zoomOut';
             document.getElementsByClassName('mperson').className = 'zoomIn';
         }
