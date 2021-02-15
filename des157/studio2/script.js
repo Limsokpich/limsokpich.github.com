@@ -65,7 +65,7 @@ window.addEventListener('load', function() {
             counter++;
             console.log(`scrolling down ${counter}`);
         }
-        else if (counter > 1 && pageTop < postTops[counter-1]) {
+        else if (counter > 0 && pageTop < postTops[counter-1]) {
             counter--;
             console.log(`scrolling up ${counter}`);
         }
