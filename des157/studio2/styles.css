@@ -1,72 +1,54 @@
 body {
     font-family: 'Bangers', cursive;
-    position: relative;
     background-color: midnightblue;
-    height: 100%;    
 }
 
 #intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
-    height: 720px; /* prevents the page this page from scrollable*/
+    margin-top: 200px;
 }
 
-.instruct {
+#painting {
+    text-align: center;
+}
+
+h1 {
     color: white;
     font-size: 100px;
 }
 
-.contain {
-    height: auto;
-    position: relative;
-}
 
-.btn {
+/* buttons */
+#play, #back{
     border: none;
     background-color: inherit;
     padding: 14px 28px;
     font-size: 30px;
     cursor: pointer;
-    display: inline-block;
-    justify-content: center;
-}
-
-.play {
     color: tomato;
     letter-spacing: 1px;
 }
 
-.play:hover {
+#back {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#play:hover, #back:hover  {
     background-color: tomato;
     color: white;
 }
 
-/* create overlay visability property */
+
+/* create paintings visability property */
 .hidden {
     visibility: hidden;
-    opacity: 0;
+    display: none;
 }
 
 .showing {
-    visibility: showing;
-    opacity: 1;
-}
-
-#overlay {
-    width: 100vw;
-    height: 100vh;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-    overflow-y: scroll; /* enables the overlay to be scrollable */
-    text-align: center;
-    background-color: midnightblue;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+    visibility: visible;
+    display: block;
 }
 
 img {
@@ -79,92 +61,78 @@ img {
     height: 1300px;
 }
 
+#story1 {
+    transition: opacity 3s;
+}
+
+
 /* create a zoom in and out property */
 .zoomIn {
-    transform: scale(0.5 1); 
-    transform-origin: -50% -50%;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 3.5s;
 }
 
 .zoomOut {
     transform: scale(0);
-    transform-origin: -50% -50%;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    /* -put transition over time property */
+    opacity: 0;
+    transition: all 3.5s;
 }
 
-/* story text box decorations*/
-.text1, .text2, .text3, .text4 {
-    display: flex;
+
+/* story text box decorations */
+section p {
     font-size: 17px;
     background: white;
     border-radius: 15px 10px 30px 5px;
     border-style: solid;
     border-color: tomato;
-    padding: 20px; 
+    padding: 20px;
     width: 500px;
-    height: 50px; 
+    height: 50px;
     letter-spacing: 1px;
 }
 
+
+/* stories that contain the text boxes should have position:relative so you are positiong the text in relation to the 0,0 of each section inside the article, not the browser window */
+article section {
+    position: relative;
+}
+
+
 /* text box position */
 .text1 {
-    position: absolute;
+    position: absolute; 
     left: 450px;
-    top: 10px;
+    top: 5px;
 }
 
 .text2 {
     position: absolute;
-    left: 30px;
-    top: 850px;
+    left: 70px;
+    top: 120px;
 }
 
 .text3 {
     position: absolute;
-    left: 40px;
-    top: 1760px;
+    left: 70px;
+    top: 160px;
 }
 
 .text4 {
     position: absolute;
-    right: 40px;
-    top: 2380px;
-}
-
-p {
-    margin-top: 9px;
-}
-
-/* close button */
-.corner {
-    font-size: 35px;
-    color: tomato;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-    outline: none;
-    transition-duration: 1s;
-    transition-timing-function: linear;
+    left: 260px;
+    top: 80px;
 }
 
 footer {
     text-align: center;
     color: white;
-    margin-bottom: 0px;
 }
 
 footer a:hover {
     background-color: tomato;
+    color: white;
 }
 
 footer a {

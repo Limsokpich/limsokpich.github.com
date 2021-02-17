@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,59 +14,41 @@
 </head>
 
 <body>
-    <article id="intro">
-        <p class="instruct">Picture this:</p>
-        <div class="contain">
-            <input class="btn play" type="button" value="Play"  />
-        </div>
+    <!-- this article gets hidden and showing -->
+    <article id="intro" class="showing">
+        <h1>Picture this:</h1>
+        <button id="play">Play</button>
     </article>
 
-    <article id="overlay" class="hidden">
-        <section id="story1">
-            <article class="text1">
-                <p>"In a season of transitioning, one tree shares the summer and winter. It seems to collide but it shares 
-                        the sun and moon."</p>
-            </article>
-            <div>
-                <img class="tree" src="images/tree1.jpg" alt="tree">
-            </div>
-        </section>
-    
-        <section id="story2">
-            <article class="text2">
-                <p>"One evening, you drive your car pass the noisy and lit city lights into a quiet getaway."</p>
-            </article>
-            <div>
-                <img class="lake" src="images/car2.jpg" alt="lake">
-            </div>
-        </section>
-    
-        <section id="story3">
-            <article class="text3">
-                <p>"In the forest you see nothing but the moon and the cloud hovering over the dark skies. The reflection of 
-                    the water pulls you into an image of yourself."</p>
-            </article>
-            <div>
-                <img class="car" src="images/lake3.jpg" alt="car">
-            </div>
-        </section>
-    
-        <section id="story4">
-            <article class="text4">
-                <p>"A reflection of the mysterious you you had not imagined. Ending your night, you said to yourself, "The 
-                    future is mine to hold.""</p>
-            </article>
-            <div>
-                <img class="person" src="images/mperson.jpg" alt="person">
-            </div>
+    <article id="painting" class="hidden">
+        <section id="story1" class="zoomOut">
+            <img class="tree" src="images/tree1.jpg" alt="tree">
+            <p class="text1">"In the transitioning of seasons one tree shares the spring and winter. It may seem to collide but it shares the sun and moon."</p>
         </section>
 
-        <button class="corner close">&otimes;</button>
+        <section id="story2" class="zoomOut">
+            <p class="text2">"One evening, you drive your car pass the noisy and lit city lights into a quiet getaway."</p>
+            <img class="lake" src="images/car2.jpg" alt="lake">
+        </section>
+
+        <section id="story3" class="zoomOut">
+            <p class="text3">"In the forest you see nothing but the moon and the cloud hovering over the dark skies. The reflection of the water pulls you into an image of yourself."</p>
+            <img class="car" src="images/lake3.jpg" alt="car">
+        </section>
+
+        <section id="story4" class="zoomOut">
+            <p class="text4">A reflection of the mysterious you. Ending your night, you said to yourself, "The future is mine to hold."</p>
+            <img class="person" src="images/mperson4.jpg" alt="person">
+        </section>
+
+        <button id="back">Go Back</button>
+
     </article>
-
-    <footer>
-        <p><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
+    
+    <footer id="footer" class="hidden">
+        <p><a href="&#108;&#105;&#109;&#115;&#117;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a> | <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
     </footer>
 
 </body>
+
 </html>
