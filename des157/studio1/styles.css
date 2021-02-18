@@ -1,5 +1,4 @@
 body {
-    background-color: darkgray;
     background-image: url(images/initalbg.JPG);
     background-size: 1200px;
 }
@@ -10,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 500px;
-    background-color: darkgray;
+    background-color:tomato;
     border-radius: 30px;
     margin: 0 auto;
     text-align: center;
