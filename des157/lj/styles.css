@@ -1,5 +1,5 @@
 #viewport {
-    background-color: lavenderblush;
+    background-color: lightblue;
 }
 
 #blogContainer {
@@ -16,7 +16,40 @@ body {
     font-family: 'Merriweather', serif;
 }
 
-nav ul {
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 16.5%;
+    background-color: lightblue;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: lavenderblush;
+}
+
+.locationmarker {
+    background: lavenderblush;
+}
+
+/* nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,15 +81,14 @@ nav ul li:active {
     color: white;
 }
 
-.locationmarker {
-    background: lavenderblush;
-}
+*/
 
 .pageTitle {
     text-align: left;
     padding-left: 25px;
     font-size: 20px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .articleTitle {
