@@ -14,7 +14,7 @@
     const rollSound = new Audio('media/roll.mp3');
     const thankSound = new Audio('media/thanksforplaying.mp3');
 
-    // when play buttin is clicked
+    // when play button is clicked
     playBtn.addEventListener('click', function() {
 
         playSound.play();
