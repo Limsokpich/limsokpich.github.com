@@ -1,5 +1,6 @@
 ( function () {
     'use strict'
+    console.log('reading js');
 
     var playBtn = document.getElementById('play');
     var startPage = document.getElementById('startup');
@@ -8,7 +9,7 @@
     var gameBlocks = document.getElementById('gameblocks');
     var nextBtn = document.getElementById('next');
 
-    // sounds
+    // variables for sounds
     const playSound = new Audio('media/play.mp3');
     const rollSound = new Audio('media/roll.mp3');
     const thankSound = new Audio('media/thanksforplaying.mp3');
