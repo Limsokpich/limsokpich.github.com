@@ -69,6 +69,11 @@ li {
 
 a:link {
     text-decoration: none;
+    color:blue;
+}
+
+a[tabindex]:focus {
+    outline: none;
 }
 
 a:hover {
@@ -99,6 +104,7 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     border: 1px solid lightsalmon;
+    width: 13vw;
 }
 
 .footer {

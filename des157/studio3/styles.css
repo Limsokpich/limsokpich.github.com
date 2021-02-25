@@ -1,0 +1,152 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    padding: 50px;
+    line-height: 1.5em;
+    background-color: lightcoral;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.showing {
+    visibility: visible;
+    display: block;
+}
+
+article {
+    display: inline-block;
+}
+
+#afterclick {
+    margin-left: 50px;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.p1, .p2{
+    margin-right: 30vw;
+}
+
+#next {
+    font-size: 20px;
+}
+
+.welcome {
+    font-size: 40px;
+    transform: rotate(-7deg) skew(-5deg);
+    margin-top: 25vh;
+}
+
+/* section {
+    width: 25vw;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 17px;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+} */
+
+label {
+    margin-top: 20px;
+}
+
+button { 
+    padding: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#startgame, 
+#quit, 
+#how,
+#roll, 
+#rollagain, 
+#pass,
+#play, 
+#next {
+    border-width: 3px;
+    border-radius: 17px;
+    border-color: black;
+    background-color: white;
+}
+
+#startgame:hover, 
+#quit:hover, 
+#how:hover,
+#roll:hover, 
+#rollagain:hover, 
+#pass:hover,
+#play:hover, 
+#next:hover {
+    background-color: black;
+    color: lightcoral;
+    border-color: lightcoral;
+}
+
+#play {
+    margin-top: 10vh;
+    font-size: 30px;
+}
+
+/* when you hover the play button, the body bg changes color */
+body.hovered {background-color:black}
+
+#how {
+    margin-right: 20px;
+}
+
+img {
+    padding: 20px;
+    border-radius: 17px;
+    background-color: black;
+    width: 11vw;
+    margin-right: 30px;
+}
+
+div {
+    padding: 20px;
+    text-align: center;
+}
+
+#gameblocks {
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+#gamecontrol {
+    margin-top: 30px;
+}
+
+#gamecontrol, #score {
+    background-color: pink;
+}
+
+#game {
+    background-color: rosybrown;
+}
+
+#actions {
+    background-color: silver;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+footer a:hover {
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    letter-spacing: 1px;
+    color: white;
+}
