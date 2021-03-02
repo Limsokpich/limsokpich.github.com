@@ -6,6 +6,17 @@ body {
     background-color: lightcoral;
 }
 
+#card {
+    background-color:lightblue;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    padding: 45px;
+    margin-left: 25vw;
+    margin-top: 60px;
+}
+
 .hidden {
     visibility: hidden;
     display: none;
@@ -16,35 +27,11 @@ body {
     display: block;
 }
 
-article {
-    display: inline-block;
-}
+#intro {margin-left: 50px;}
 
-#afterclick {
-    margin-left: 50px;
-}
+h1 {margin-bottom: 40px;}
 
-h1 {
-    margin-bottom: 40px;
-}
-
-.p1, .p2{
-    margin-right: 30vw;
-}
-
-#next {
-    font-size: 20px;
-}
-
-.welcome {
-    font-size: 40px;
-    transform: rotate(-7deg) skew(-5deg);
-    margin-top: 25vh;
-}
-
-label {
-    margin-top: 20px;
-}
+.p1, .p2 {margin-right: 30vw;}
 
 button { 
     padding: 10px;
@@ -58,7 +45,7 @@ button {
 #roll, 
 #rollagain, 
 #pass,
-#play, 
+#startgame, 
 #next {
     border-width: 3px;
     border-radius: 17px;
@@ -69,27 +56,27 @@ button {
 #startgame:hover, 
 #quit:hover, 
 #how:hover,
-#roll:hover, 
+#roll:hover,
 #rollagain:hover, 
 #pass:hover,
-#play:hover, 
+#startgame:hover, 
 #next:hover {
     background-color: black;
     color: lightcoral;
     border-color: lightcoral;
 }
 
-#play {
-    margin-top: 10vh;
-    font-size: 30px;
-}
-
 /* when you hover the play button, the body bg changes color */
 body.hovered {background-color:black}
 
-#how {
-    margin-right: 20px;
+div {text-align: center;}
+
+#startgame {
+    margin-top: 35px;
+    font-size: 25px;
 }
+
+#how {margin-right: 20px;}
 
 img {
     padding: 20px;
@@ -97,32 +84,18 @@ img {
     background-color: black;
     width: 11vw;
     margin-right: 30px;
+    margin-top: 20px;
 }
 
-div {
+#tell_player, #roll_pass {
+    margin: 50px;
+}
+
+#game {margin: 30px;}
+
+.winner {
+    background-color: red;
     padding: 20px;
-    text-align: center;
-}
-
-#gameblocks {
-    margin-left: 45px;
-    margin-right: 45px;
-}
-
-#gamecontrol {
-    margin-top: 30px;
-}
-
-#gamecontrol, #score {
-    background-color: pink;
-}
-
-#game {
-    background-color: rosybrown;
-}
-
-#actions {
-    background-color: silver;
 }
 
 footer {
