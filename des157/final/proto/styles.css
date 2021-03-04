@@ -1,0 +1,241 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    padding: 50px;
+    line-height: 1.7em;
+    background-color: lightcoral;
+}
+
+div {text-align: center;}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.showing {
+    visibility: visible;
+    display: block;
+}
+
+button { 
+    padding: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#quit, 
+#how,
+#throw1, 
+#throw2, 
+#pass1,
+#pass2,
+#start_game, 
+#next,
+#play, 
+#play_again {
+    border-width: 3px;
+    border-radius: 17px;
+    border-color: black;
+    background-color: white;
+}
+
+#quit:hover, 
+#how:hover,
+#throw1:hover,
+#throw2:hover, 
+#pass1:hover,
+#pass2:hover,
+#start_game:hover, 
+#next:hover, 
+#play:hover,
+#play_again:hover {
+    background-color: black;
+    color: lightcoral;
+    border-color: lightcoral;
+}
+
+#circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#circles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    background-color: white;
+    bottom: -100px;
+    animation: circle 20s infinite;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition-timing-function: linear;
+}
+
+#circles li:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 20%;
+}
+
+#circles li:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+
+#circles li:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    left: 35%;
+    animation-delay: 4s;
+    animation-duration: 13s;
+}
+
+#circles li:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    animation-delay: 2.5s;
+    animation-duration: 20s;
+}
+
+#circles li:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    left: 60%;
+    animation-delay: 3s;
+    animation-duration: 10s;
+}
+
+@keyframes circle {
+    0% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1080px) rotate(630deg);
+        transform: translateY(-1080px) rotate(630deg);
+    }
+}
+
+.title {
+    margin-top: 60px;
+    font-size: 40px;
+    text-transform: uppercase;
+    transform: rotate(-5deg) skew(-5deg);
+}
+
+#play {
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+#start_up {
+    z-index: 1;
+}
+
+#intro {margin-left: 50px;}
+
+h1 {margin-bottom: 40px;}
+
+.p1 {margin-left: 4vw;}
+
+.input_name {
+    position: absolute;
+    top: 30vh;
+    left: 60vw;
+    display: block;
+    width: 350px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    padding: 40px;
+}
+
+#input1 {
+    margin-bottom: 30px;
+}
+
+ol {
+    margin-right: 50vw;
+    margin-left: 3vw;
+}
+
+/* when you hover the play button, the body bg changes color */
+body.hovered {background-color:black}
+
+#start_game {
+    margin-top: 35px;
+    font-size: 15px;
+}
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    margin-top: 15vh;
+}
+
+/* Control the left side */
+.left {
+    left: 0;
+    background-color:tomato;
+}
+
+/* Control the right side */
+.right {
+    right: 0;
+    background-color: mediumseagreen;
+}
+
+#card {
+    background-color:lightblue;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    padding: 45px;
+    margin-left: 25vw;
+    margin-top: 60px;
+}
+
+#how {margin-right: 20px;}
+
+img {
+    padding: 20px;
+    border-radius: 17px;
+    background-color: black;
+    width: 11vw;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+#throw1, #throw2 {
+    margin-right: 20px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+footer a:hover {
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    letter-spacing: 1px;
+    color: white;
+}
