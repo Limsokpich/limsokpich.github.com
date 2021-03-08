@@ -1,9 +1,11 @@
 body {
-    font-family: 'Comfortaa', cursive;
+    font-family: 'DotGothic16', sans-serif;
     color: white;
     padding: 50px;
     line-height: 1.7em;
+    letter-spacing: 0.6px;
     background-color: lightcoral;
+    padding-top: 33px;
 }
 
 div {text-align: center;}
@@ -30,14 +32,15 @@ button {
 #throw2, 
 #pass1,
 #pass2,
-#start_game, 
-#next,
+#submit,
 #play, 
 #play_again {
-    border-width: 3px;
+    border-width: 2px;
     border-radius: 17px;
     border-color: black;
     background-color: white;
+    letter-spacing: 0.9px;
+    outline: none;
 }
 
 #quit:hover, 
@@ -46,12 +49,11 @@ button {
 #throw2:hover, 
 #pass1:hover,
 #pass2:hover,
-#start_game:hover, 
-#next:hover, 
+#submit:hover, 
 #play:hover,
 #play_again:hover {
-    background-color: black;
-    color: lightcoral;
+    background-color: lightgray;
+    color: white;
     border-color: lightcoral;
 }
 
@@ -61,7 +63,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -1; /* -1 puts the animation behind whatever */
 }
 
 #circles li {
@@ -71,7 +73,7 @@ button {
     background-color: white;
     bottom: -100px;
     animation: circle 20s infinite;
-    border: 2px solid black;
+    border: 2px solid gray;
     border-radius: 50%;
     transition-timing-function: linear;
 }
@@ -80,22 +82,24 @@ button {
     width: 40px;
     height: 40px;
     left: 20%;
+    animation-delay: 0;
+    animation-duration: 5s;
 }
 
 #circles li:nth-child(2) {
     width: 60px;
     height: 60px;
     left: 50%;
-    animation-delay: 2s;
-    animation-duration: 17s;
+    animation-delay: 5ms;
+    animation-duration: 7s;
 }
 
 #circles li:nth-child(3) {
     width: 25px;
     height: 25px;
     left: 35%;
-    animation-delay: 4s;
-    animation-duration: 13s;
+    animation-delay: 3s;
+    animation-duration: 3s;
 }
 
 #circles li:nth-child(4) {
@@ -103,15 +107,15 @@ button {
     height: 80px;
     left: 80%;
     animation-delay: 2.5s;
-    animation-duration: 20s;
+    animation-duration: 9s;
 }
 
 #circles li:nth-child(5) {
     width: 50px;
     height: 50px;
     left: 60%;
-    animation-delay: 3s;
-    animation-duration: 10s;
+    animation-delay: 1s;
+    animation-duration: 5s;
 }
 
 @keyframes circle {
@@ -126,28 +130,39 @@ button {
 }
 
 .title {
-    margin-top: 60px;
-    font-size: 40px;
+    letter-spacing: 10px;
+    margin-top: 30vh;
+    font-size: 80px;
+    color: black;
     text-transform: uppercase;
-    transform: rotate(-5deg) skew(-5deg);
+    transform: rotate(-11deg) skew(-11deg);
 }
+
+/* when you hover the play button, the body bg changes color */
+body.hovered {background-color: gray;}
 
 #play {
-    margin-top: 40px;
-    font-size: 30px;
-}
-
-#start_up {
+    margin-top: 100px;
+    font-size: 35px;
     z-index: 1;
 }
 
 #intro {margin-left: 50px;}
 
-h1 {margin-bottom: 40px;}
+h1 {margin-bottom: 30px;}
 
 .p1 {margin-left: 4vw;}
 
-.input_name {
+.pokebg {
+    position: absolute;
+    height: 63vh;
+    width: 43vw;
+    top: 10vw;
+    left: 8vw;
+    z-index: -1;
+}
+
+#input_names {
     position: absolute;
     top: 30vh;
     left: 60vw;
@@ -160,21 +175,42 @@ h1 {margin-bottom: 40px;}
     box-shadow: 10px 10px 8px #888888;
 }
 
-#input1 {
-    margin-bottom: 30px;
-}
+#input1, #input2 {margin-bottom: 30px;}
 
 ol {
     margin-right: 50vw;
     margin-left: 3vw;
 }
 
-/* when you hover the play button, the body bg changes color */
-body.hovered {background-color:black}
+ol li {margin-top: 10px;}
 
-#start_game {
-    margin-top: 35px;
-    font-size: 15px;
+.overlay {
+    box-sizing: border-box;
+    color: black;
+    background-color: white;
+    padding: 20px;
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.corner {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+    transition-duration: 3ms;
+    transition-timing-function: ease;
 }
 
 /* Split the screen in half */
@@ -211,19 +247,26 @@ body.hovered {background-color:black}
     margin-top: 60px;
 }
 
-#how {margin-right: 20px;}
+#how, #quit {
+    font-size: 20px;
+    margin-right: 20px;
+}
 
-img {
+/* img {
     padding: 20px;
     border-radius: 17px;
-    background-color: black;
     width: 11vw;
     margin-right: 30px;
     margin-top: 20px;
-}
+} */
 
 #throw1, #throw2 {
-    margin-right: 20px;
+    font-size: 30px;
+    margin-right: 35px;
+}
+
+#pass1, #pass2 {
+    font-size: 30px;
 }
 
 footer {
@@ -237,6 +280,5 @@ footer a:hover {
 }
 
 footer a {
-    letter-spacing: 1px;
     color: white;
 }

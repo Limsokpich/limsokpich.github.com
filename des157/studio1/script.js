@@ -3,7 +3,6 @@
     console.log("reading js");
 
     var myForm = document.querySelector('#myForm');
-    var overlay = document.querySelector('#overlay');
     
     myForm.addEventListener('submit', function(event) { //when the user clicks on the submit button
 

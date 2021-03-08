@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of PIG</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="start_up" class="showing">
+        <!-- animation -->
+        <ul id="circles" class="showing">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h1 class="title">Pokemond Battle</h1>
+        <button id="play">PLAY</button>
+    </div>
+    
+    <section id="intro" class="hidden">
+        <h1>How to Play</h1>
+        <ol id="instruction">
+            <li>There are two players. The player whose turn it is throws a pokeball. Here is the basic rules of each pokeball they can open: </li>
+            <ul>
+                <li class="p1">If a player throw a jigglypuff it will make you sleepy which results -1 point.</li>
+                <li class="p1">If a player throw a pickachu they get electrocuted which results in -2 points.</li>
+                <li class="p1">If a player throw a snorlax it’s hug will make you happy which results in +2 points.</li>
+                <li class="p1">If a player throw a charmander it’s flames will help keep you warm which results in +3 point.</li>
+                <li class="p1">If a player throw a mew it will grant you any wishes which results in +5 points.</li>
+            </ul>
+            <li>After each throw, the current player can either throw again or pass it to the other player (if they feel unlucky).</li>
+            <li>The first player to get 30 points or higher wins.</li>
+        </ol>      
+        <img class="pokebg" src="images/pokebg.PNG" alt="pokeballbg">
+        <form id="input_names" method="POST">
+            <label for="input1">Player 1 Name:</label>
+            <input type="text" id="input1" required>
+            <label for="input2">Player 2 Name:</label>
+            <input type="text" id="input2" required>
+            <button id="submit">NEXT</button>
+        </form>
+    </section>
+
+    <main>
+        <div id="settings" class="hidden">
+            <!-- <button id="how">How to Play?</button> -->
+            <button id="quit">Quit?</button>
+        </div>
+
+        <div id="game_play" class="hidden">
+            <!-- Player 1 side -->
+            <div id="left_side" class="split left">
+                <div class="card">
+                    <h1 id="player1"></h1>
+
+                    <!-- Player 1 dice and messages -->
+                    <div>
+                        <h3 id="player_turn"></h3>
+                        <p id="message"></p>
+                        <div id="dice_img"></div>
+                    </div>
+
+                    <h2>Score:</h2>
+                    <h1 id="score1">0</h1>
+                    <button id="throw1">THROW</a>
+                    <button id="pass1">PASS</a>
+                </div>
+            </div>
+    
+            <!-- Player 2 side -->
+            <div id="right_side" class="split right">
+                <div class="card">
+                    <h1 id="player2"></h1>
+
+                    <!-- Player 2 dice and messages -->
+                    <div>
+                        <h3 id="player_turn"></h3>
+                        <p id="message"></p>
+                        <div id="dice_img"></div>
+                    </div>
+                    
+                    <h2>Score:</h2>
+                    <h1 id="score2">0</h1>
+                    <button id="throw2">THROW</a>
+                    <button id="pass2">PASS</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="fade_box"></div>
+
+    <!-- Winner page load -->
+    <div id="winner_page" class="hidden">
+        <h1 id="winner_name"></h1>
+        <h2>WINNER!</h2>
+        <button id="play_again">PLAY AGAIN</button>
+    </div>
+    
+
+    <!-- <div id="card" class="hidden">
+        <button id="how">How to Play?</button>
+        <button id="quit">Quit?</button>
+        <div id="game"></div>
+        <div id="actions"></div>
+        <div id="score"></div>
+    </div>
+     -->
+
+    <footer id="footer" class="hidden">
+        <p><a href="&#108;&#105;&#109;&#115;&#117;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a> | <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
+    </footer>
+    
+</body>
+</html>
