@@ -52,7 +52,7 @@ button {
 #submit:hover, 
 #play:hover,
 #play_again:hover {
-    background-color: lightgray;
+    background-color: gray;
     color: white;
     border-color: lightcoral;
 }
@@ -151,11 +151,13 @@ body.hovered {background-color: gray;}
 
 h1 {margin-bottom: 30px;}
 
-.p1 {margin-left: 4vw;}
+ul li {
+    margin-left: 1.5vw;
+}
 
 .pokebg {
     position: absolute;
-    height: 63vh;
+    height: 65vh;
     width: 43vw;
     top: 10vw;
     left: 8vw;
@@ -179,12 +181,12 @@ h1 {margin-bottom: 30px;}
 
 ol {
     margin-right: 50vw;
-    margin-left: 3vw;
+    margin-left: 2.7vw;
 }
 
 ol li {margin-top: 10px;}
 
-.overlay {
+/* .overlay {
     box-sizing: border-box;
     color: black;
     background-color: white;
@@ -211,7 +213,7 @@ ol li {margin-top: 10px;}
     outline: none;
     transition-duration: 3ms;
     transition-timing-function: ease;
-}
+} */
 
 /* Split the screen in half */
 .split {
@@ -247,18 +249,40 @@ ol li {margin-top: 10px;}
     margin-top: 60px;
 }
 
+#fade_box_left {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    overflow-x: hidden;
+    margin-top: 15vh;
+    left: 0;
+    background-color:black;
+    opacity: 0.7;
+}
+
+#fade_box_right {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    overflow-x: hidden;
+    margin-top: 15vh;
+    right: 0;
+    background-color:black;
+    opacity: 0.7;
+}
+
 #how, #quit {
     font-size: 20px;
     margin-right: 20px;
 }
 
-/* img {
-    padding: 20px;
-    border-radius: 17px;
-    width: 11vw;
-    margin-right: 30px;
-    margin-top: 20px;
-} */
+#dice_img1 img, #dice_img2 img{ 
+    width: 180px;
+}
 
 #throw1, #throw2 {
     font-size: 30px;

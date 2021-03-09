@@ -31,14 +31,14 @@
         <ol id="instruction">
             <li>There are two players. The player whose turn it is throws a pokeball. Here is the basic rules of each pokeball they can open: </li>
             <ul>
-                <li class="p1">If a player throw a jigglypuff it will make you sleepy which results -1 point.</li>
-                <li class="p1">If a player throw a pickachu they get electrocuted which results in -2 points.</li>
-                <li class="p1">If a player throw a snorlax it’s hug will make you happy which results in +2 points.</li>
-                <li class="p1">If a player throw a charmander it’s flames will help keep you warm which results in +3 point.</li>
-                <li class="p1">If a player throw a mew it will grant you any wishes which results in +5 points.</li>
+                <li>If a player throw a Jigglypuff it will make you sleepy which results -1 point.</li>
+                <li>If a player throw a Pickachu they get electrocuted which results in -2 points.</li>
+                <li>If a player throw a Snorlax it’s hug will make you happy which results in +2 points.</li>
+                <li>If a player throw a Charmander it’s flames will help keep you warm which results in +3 points.</li>
+                <li>If a player throw a Mew it will grant you any wishes which results in +5 points.</li>
             </ul>
             <li>After each throw, the current player can either throw again or pass it to the other player (if they feel unlucky).</li>
-            <li>The first player to get 30 points or higher wins.</li>
+            <li>The first player to get 15 points or higher wins.</li>
         </ol>      
         <img class="pokebg" src="images/pokebg.PNG" alt="pokeballbg">
         <form id="input_names" method="POST">
@@ -53,7 +53,7 @@
     <main>
         <div id="settings" class="hidden">
             <!-- <button id="how">How to Play?</button> -->
-            <button id="quit">Quit?</button>
+            <button id="quit">QUIT?</button>
         </div>
 
         <div id="game_play" class="hidden">
@@ -64,9 +64,9 @@
 
                     <!-- Player 1 dice and messages -->
                     <div>
-                        <h3 id="player_turn"></h3>
-                        <p id="message"></p>
-                        <div id="dice_img"></div>
+                        <h3 id="player1_turn"></h3>
+                        <p id="message1"></p>
+                        <div id="dice_img1"></div>
                     </div>
 
                     <h2>Score:</h2>
@@ -83,9 +83,9 @@
 
                     <!-- Player 2 dice and messages -->
                     <div>
-                        <h3 id="player_turn"></h3>
-                        <p id="message"></p>
-                        <div id="dice_img"></div>
+                        <h3 id="player2_turn"></h3>
+                        <p id="message2"></p>
+                        <div id="dice_img2"></div>
                     </div>
                     
                     <h2>Score:</h2>
@@ -95,26 +95,18 @@
                 </div>
             </div>
         </div>
-    </main>
 
-    <div id="fade_box"></div>
+        <!-- when users switch players this box fade out corresponding side -->
+        <div id="fade_box_left" class="hidden"></div>
+        <div id="fade_box_right" class="hidden"></div>
+    </main>
 
     <!-- Winner page load -->
     <div id="winner_page" class="hidden">
         <h1 id="winner_name"></h1>
-        <h2>WINNER!</h2>
+        <h1>WINNER!</h1>
         <button id="play_again">PLAY AGAIN</button>
     </div>
-    
-
-    <!-- <div id="card" class="hidden">
-        <button id="how">How to Play?</button>
-        <button id="quit">Quit?</button>
-        <div id="game"></div>
-        <div id="actions"></div>
-        <div id="score"></div>
-    </div>
-     -->
 
     <footer id="footer" class="hidden">
         <p><a href="&#108;&#105;&#109;&#115;&#117;&#110;&#103;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email</a> | <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></p>
