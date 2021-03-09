@@ -35,7 +35,7 @@ button {
 #submit,
 #play, 
 #play_again {
-    border-width: 2px;
+    border-width: 3px;
     border-radius: 17px;
     border-color: black;
     background-color: white;
