@@ -186,35 +186,6 @@ ol {
 
 ol li {margin-top: 10px;}
 
-/* .overlay {
-    box-sizing: border-box;
-    color: black;
-    background-color: white;
-    padding: 20px;
-    width: 650px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 15px;
-    text-align: center;
-}
-
-.corner {
-    font-size: 36px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-    outline: none;
-    transition-duration: 3ms;
-    transition-timing-function: ease;
-} */
-
 /* Split the screen in half */
 .split {
     height: 100%;
@@ -292,6 +263,16 @@ ol li {margin-top: 10px;}
 #pass1, #pass2 {
     font-size: 30px;
 }
+
+#winner_name {margin-top: 50px;}
+
+.announce_winner {
+    margin-top: 30vh;
+    margin-bottom: 20vh;
+    font-size: 100px;
+}
+
+#play_again {margin-bottom: 50px;}
 
 footer {
     text-align: center;
