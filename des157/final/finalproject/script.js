@@ -1,8 +1,6 @@
-( function () {
+(function() {
     'use strict'
     console.log('reading js');
-
-    alert('Hello,\n\nWelcome to the user testing phase of my game. Here are some task I would like you to go through as you play my game. Please keep in mind the game is still under development so the scoring are not fixed. Feel free to ask any question that is not relating to the tasks.\n\nTask 1: Please, fill out your name.\nTask 2: Please, quit the game and start over.\nTask 3: Please, play on the right side of the game based on your turn during the first time you play the game.\n\nThank you for your time and please let know if you have any concerns.')
 
     // variables for buttons
     const playBtn = document.getElementById('play');
@@ -21,23 +19,21 @@
 
     // variables for sounds
     const playSound = new Audio('media/play.mp3');
-    const rollSound = new Audio('media/roll.mp3');
     const thankSound = new Audio('media/thanksforplaying.mp3');
-   
+    const bgMusic = new Audio('media/PimPoy.wav');
+
     // when you hover over the play button, body bg color changes 
     const body = document.body;
-
     playBtn.onmouseover = function() {
         body.className = 'hovered';
     };
-
     playBtn.onmouseout = function() {
         body.className = '';
-    }; 
+    };
 
     // when play button is clicked
-    playBtn.addEventListener('click',  function() {
-        // document.getElementById('circles').className = 'hidden';
+    playBtn.addEventListener('click', function() {
+        playSound.play();
         startUp.className = 'hidden';
         intro.className = 'showing';
     });
@@ -46,7 +42,9 @@
     inputNames.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        playSound.play();
+        // bg music gets played  on loop
+        bgMusic.loop = true;
+        bgMusic.play();
 
         intro.className = 'hidden';
         settings.className = 'showing';
@@ -60,54 +58,18 @@
         if (input1 && input2) {
             player1Name.innerHTML = input1;
             player2Name.innerHTML = input2;
-        };  
+        };
 
-        gameData1.index = Math.round(Math.random ()); // randomly set game index 
-        gameData2.index = Math.round(Math.random ()); // randomly set game index 
-
-        quitBtn.addEventListener('click', function () {
-            // thanks sound play
+        quitBtn.addEventListener('click', function() {
             thankSound.play();
             location.reload();
         });
 
-        /* document.getElementById('how').addEventListener('click', function () {
-            intro.className = 'showing';
-            startGameBtn.remove();
-            document.getElementById('random_pick').remove();
-        }); */
-
         console.log(gameData1.index);
         console.log(gameData2.index);
-        //set up turn appears when you call it in this function 
 
-        //put game function here
         setupGame();
     });
-
-/*  
-    // overlay functions 
-    var howBtn = document.getElementById('how');
-    var instruction = document.getElementById('instruction');
-
-    howBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        instruction.className = 'overlay showing'; //the overlay content appears
-    });
-
-    //when user clicks the X button, the overlay content is hidden, input does not reset so that users can go back to change their input
-    document.querySelector('.corner').addEventListener('click', function (event) { 
-        event.preventDefault();
-        instruction.className = 'overlay hidden';
-    });
-
-    //when user press the escape key, the overlays content is hidden again
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            document.querySelector('.showing').className = 'instruction hidden';
-        }
-    });
-*/
 
     // gameplay variables
     const gamePlay = document.getElementById('game_play');
@@ -115,12 +77,11 @@
     const player2Name = document.getElementById('player2');
     const player1Turn = document.getElementById('player1_turn');
     const player2Turn = document.getElementById('player2_turn');
-    const message1 = document.getElementById('message1');   
+    const message1 = document.getElementById('message1');
     const message2 = document.getElementById('message2');
-    const diceImg1 = document.getElementById('dice_img1');
-    const diceImg2 = document.getElementById('dice_img2');
-    let score1 = document.getElementById('score1');
-    let theScore1 = 0;
+    const throwImg1 = document.getElementById('throw_img1');
+    const throwImg2 = document.getElementById('throw_img2');
+    let score1 = document.getElementById('score1'); // my note: let enable you to updates the variable
     let score2 = document.getElementById('score2');
 
     const leftFade = document.getElementById('fade_box_left');
@@ -141,8 +102,25 @@
     var gameData2 = {
         dice: ['images/minus1.PNG', 'images/minus2.PNG', 'images/plus2.PNG', 'images/plus3.PNG', 'images/plus5.PNG'],
         score: 0,
-        roll: 0, 
+        roll: 0,
         index: 1,
+    };
+
+    // set up or reset the game for all the variables
+    function setupGame() {
+        quitBtn.className = '';
+        message1.innerHTML = '';
+        message2.innerHTML = '';
+        gameData1.score = 0;
+        gameData2.score = 0;
+        gameData1.roll = 0;
+        gameData2.roll = 0;
+        score1.innerHTML = '0';
+        score2.innerHTML = '0';
+        turn = 0;
+        gameOver = false;
+        leftFade.className = 'hidden';
+        rightFade.className = 'showing';
     };
 
 
@@ -156,7 +134,7 @@
             throwDice1(gameData1); // throw and update gamedata for player 1
         } 
         else {
-            return; //stop exectuing the function 
+            return; //stop exceuting the function 
         }
     });
 
@@ -176,7 +154,7 @@
     // when player 1 clicks pass
     pass1Btn.addEventListener('click', function() {
         if (turn == 0 && !gameOver) {
-            turn = !turn;   // set turn to 1
+            turn = !turn; // set turn to 1
             player2Turn.innerHTML = 'It\'s your turn';
             player1Turn.innerHTML = '';
             leftFade.className = 'showing';
@@ -190,7 +168,7 @@
     // when player 2 clicks pass
     pass2Btn.addEventListener('click', function() {
         if (turn == 1 && !gameOver) {
-            turn = !turn;   // set turn to 0
+            turn = !turn; // set turn to 0
             player1Turn.innerHTML = 'It\'s your turn';
             player2Turn.innerHTML = '';
             rightFade.className = 'showing';
@@ -201,119 +179,86 @@
         }
     });
 
-    // set up or reset the game and all the variables
-    function setupGame() {
-        quitBtn.className = '';
-        message1.innerHTML = '';
-        message2.innerHTML = '';
-        gameData1.score = 0;
-        gameData2.score = 0;
-        gameData1.roll = 0;
-        gameData2.roll = 0;
-        score1.innerHTML = '0';
-        score2.innerHTML = '0';
-        turn = 0;
-        gameOver = false;
-    };
-
-
     // Throwing the pokeball for player 1 
-    function throwDice1 () {
-        gameData1.roll = Math.floor(Math.random() * 5); // using ceiling could result in a zero 
-        diceImg1.innerHTML = `<img src="${gameData1.dice[gameData1.roll]}">`; //randomize the images, 5 is the length of the array
+    function throwDice1() {
+        player1Turn.innerHTML = '';
+        gameData1.roll = Math.floor(Math.random() * 5); // roll hold the variable to random value of the images
+        throwImg1.innerHTML = `<img src="${gameData1.dice[gameData1.roll]}">`; //randomize the images, given that we call the index that is set between 0-5 of the array 
 
         // set up points conditions for when certain pokball is thrown for player 1
         if (gameData1.roll == 0) {
             console.log("minus 1");
-            message1.innerHTML = '<p>A wild Jigglypuff appears, it sings and you fall asleep making you lose 1 points</p>';
-            gameData1.roll = -1; //set the roll points to -1 
-
-            setTimeout(3000);
-        }
+            message1.innerHTML = '<p>A wild Jigglypuff appears, it\'s singing\nmakes you fall asleep so you lost 1 point</p>';
+            gameData1.roll = -1; //set the throw points to 1 
+        } 
         else if (gameData1.roll == 1) {
             console.log("minus 2");
-            message1.innerHTML = '<p>A wild pickachu appears, it electrocuted you making you lose 2 point</p>';
-            gameData1.roll = -2; //set the roll points to -2
-
-            setTimeout(3000);
+            message1.innerHTML = '<p>A wild pickachu appears, it electrocuted\nyou so you lost 2 points</p>';
+            gameData1.roll = -2; //set the throw points to -2
         }
         else if (gameData1.roll == 2) {
             console.log("plus 2");
-            message1.innerHTML = '<p>A wild snorlax appears and hugs you giving you 2 point</p>';
-            gameData1.roll = 2; //set the roll points to 2
-
-            setTimeout(setupGame, 3000);
-        }
+            message1.innerHTML = '<p>A wild snorlax appears and gave\nyou a hug so you gain 2 points</p>';
+            gameData1.roll = 2; //set the throw points to 2
+        } 
         else if (gameData1.roll == 3) {
             console.log("plus 3");
-            message1.innerHTML = '<p>A wild charmander appears, the flames are so warm it gave you 3 point</p>';
-            gameData1.roll = 3; //set the roll points to 3
-
-            setTimeout(3000);
-        }
+            message1.innerHTML = '<p>A wild charmander appears, the flames\ngive you warmth so you gain 3 points</p>';
+            gameData1.roll = 3; //set the throw points to 3
+        } 
         else {
             console.log("plus 5");
-            message1.innerHTML = '<p>A wild mew appears granting you many wishes giving you 5 point</p>';
-            gameData1.roll = 5; //set the roll points to 5
-
-            setTimeout(3000);
+            message1.innerHTML = '<p>A wild mew appears granting you\nmany wishes so you gain 5 points</p>';
+            gameData1.roll = 5; //set the throw points to 5
         }
 
         gameData1.score = gameData1.score + gameData1.roll; // add the roll points to the current score
         score1.innerHTML = gameData1.score; //show the current score
-        console.log(gameData1); 
+        console.log(gameData1);
 
         checkWinningCondition();
     };
 
     // throw pokeball for player 2
     function throwDice2() {
-        gameData2.roll = Math.floor(Math.random() * 5) + 1;
-        diceImg2.innerHTML = `<img src="${gameData1.dice[Math.floor(Math.random() * 5)]}">`; 
-        gameData2.score = gameData2.roll + gameData2.score;
-        score2.innerHTML = gameData2.score; 
-        console.log(gameData2);
+        player2Turn.innerHTML = '';
+        gameData2.roll = Math.floor(Math.random() * 5);
+        throwImg2.innerHTML = `<img src="${gameData1.dice[gameData2.roll]}">`;
 
         // for player 2
-        if (gameData2.dice === [0]) {
+        if (gameData2.roll == 0) {
             console.log("minus 1");
-            message2.innerHTML += '<p>A wild Jigglypuff appears, it sings and you fall asleep making you lose 1 points</p>';
-            gameData2.roll = -1;
-
-            setTimeout(setupGame, 3000);
-        }
-        if (gameData2.dice === [1]) {
+            message2.innerHTML = '<p>A wild Jigglypuff appears, it singing makes you fall asleep so you lost 1 point</p>';
+            gameData2.roll = -1; //set the roll points to 1 
+        } 
+        else if (gameData2.roll == 1) {
             console.log("minus 2");
-            message2.innerHTML += '<p>A wild pickachu appears, it electrocuted you making you lose 1 point</p>';
-            gameData2.roll = -2;
-
-            setTimeout(setupGame, 3000);
+            message2.innerHTML = '<p>A wild pickachu appears, it electrocuted you so you lost 2 points</p>';
+            gameData2.roll = -2; //set the roll points to -2
         }
-        if (gameData2.dice === [2]) {
+        else if (gameData2.roll == 2) {
             console.log("plus 2");
-            message2.innerHTML += '<p>A wild snorlax appears and hugs you giving you 2 point</p>';
-            gameData2.roll = 2;
-
-            setTimeout(setupGame, 3000);
-        }
-        if (gameData2.dice === [3]) {
+            message2.innerHTML = '<p>A wild snorlax appears and gave you a hug so you gain 2 points</p>';
+            gameData2.roll = 2; //set the roll points to 2
+        } 
+        else if (gameData2.roll == 3) {
             console.log("plus 3");
-            message2.innerHTML += '<p>A wild charmander appears, the flames are so warm it gave you 3 point</p>';
-            gameData2.roll = 3;
-
-            setTimeout(setupGame, 3000);
-        }
-        else if (gameData2.dice === [4]) {
+            message2.innerHTML = '<p>A wild charmander appears, the flames give you warmth so you gain 3 points</p>';
+            gameData2.roll = 3; //set the roll points to 3
+        } 
+        else {
             console.log("plus 5");
-            message2.innerHTML += '<p>A wild mew appears granting you many wishes giving you 5 point</p>';
-            gameData2.roll = 5;
-
-            setTimeout(setupGame, 3000);
+            message2.innerHTML = '<p>A wild mew appears granting you many wishes so you gain 5 points</p>';
+            gameData2.roll = 5; //set the roll points to 5
         }
+
+        gameData2.score = gameData2.score + gameData2.roll; // add the roll points to the current score
+        score2.innerHTML = gameData2.score; //show the current score
+        console.log(gameData2);
 
         checkWinningCondition();
     };
-    
+
 
     // all the variables for winner page
     const winnerPage = document.getElementById('winner_page');
@@ -321,57 +266,61 @@
     const playAgainBtn = document.getElementById('play_again');
 
     //checking winning condition
-    function checkWinningCondition () {
+    function checkWinningCondition() {
+
+        // had to define the var here again because the first one was in a local scope
+        var input1 = document.querySelector('#input1').value;
+        var input2 = document.querySelector('#input2').value;
+
         if (gameData1.score >= 15) {
 
             settings.className = 'hidden';
             gamePlay.className = 'hidden';
             footer.className = 'showing';
-            winnerPage.className = 'showing';
-            winnerName.innerHTML = `${input1}`;
+            winnerPage.className = 'showing winner1_bgcolor';
+            winnerName.innerHTML = `${input1} is the`;
 
             playAgainBtn.addEventListener('click', function(event) {
-                
+
                 event.preventDefault();
 
                 location.reload();
-                // put game function here
             });
 
-            // thank sound play
             thankSound.play();
 
             gameOver = true;
 
+            bgMusic.pause();
+
             rightFade.className = 'hidden';
             leftFade.className = 'hidden';
-        }
+        } 
         else if (gameData2.score >= 15) {
             settings.className = 'hidden';
             gamePlay.className = 'hidden';
             footer.className = 'showing';
             winnerPage.className = 'showing';
-            winnerName.innerHTML = `${input2}`;
-            
+            winnerName.innerHTML = `${input2} is the`;
+
             playAgainBtn.addEventListener('click', function(event) {
-                
+
                 event.preventDefault();
 
                 location.reload();
-                // put game function here
             });
 
-            // thank sound play
             thankSound.play();
 
             gameOver = true;
 
+            bgMusic.pause();
+
             rightFade.className = 'hidden';
             leftFade.className = 'hidden';
-        }
+        } 
         else {
-            // continue the game
-            return;
+            return; // continue the game
         }
     };
 })();
