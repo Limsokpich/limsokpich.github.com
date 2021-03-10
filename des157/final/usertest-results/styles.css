@@ -1,0 +1,95 @@
+body {
+    font-family: 'Gentium Basic', serif;
+    align-content: center;
+    background-color: rgb(221,160,221);
+}
+
+article {
+    background-color: white;
+    margin: 10vw;
+    margin-top: 5vw;
+    height: auto;
+}
+
+h1, h2, h3 {
+    color: white;
+    text-align: center;
+}
+
+.ps, .cp1 {
+    color: black;
+    text-align: left;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 40px;
+}
+
+h1 {margin-top: 10vh;}
+
+p, li{
+    padding-left: 150px;
+    padding-right: 150px;
+    line-height: 25px;
+}
+
+.l1 {
+    margin-top: 20px;
+}
+
+.l2, .l3 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+#summary {
+    background-color: white;
+    margin: 0;
+    margin-top: 5vw;
+    margin-bottom: 50px;
+    padding-bottom: 3vw;
+}
+
+#summary h3 {
+    padding-left: 200px;
+}
+
+#summary p {
+    padding-left: 320px;
+    padding-right: 350px;
+}
+
+#summary img {
+    margin-left: 380px;
+}
+
+.a1 {
+    margin-top: 20px;
+    padding-bottom: 2vw;
+    margin-bottom: 50px;
+}
+
+img {
+    margin-top: 20px;
+    margin-left: 200px;
+    width: 723px;
+    height: 400px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+footer a:hover {
+    background-color: white;
+    color: black;
+}
+
+footer a {
+    letter-spacing: 1px;
+    color: white;
+}

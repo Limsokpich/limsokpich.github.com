@@ -119,8 +119,10 @@
     const message2 = document.getElementById('message2');
     const diceImg1 = document.getElementById('dice_img1');
     const diceImg2 = document.getElementById('dice_img2');
-    const score1 = document.getElementById('score1');
-    const score2 = document.getElementById('score2');
+    let score1 = document.getElementById('score1');
+    let theScore1 = 0;
+    let score2 = document.getElementById('score2');
+
     const leftFade = document.getElementById('fade_box_left');
     const rightFade = document.getElementById('fade_box_right');
 
@@ -220,10 +222,6 @@
     function throwDice1 () {
         gameData1.roll = Math.floor(Math.random() * 5) + 1; // using ceiling could result in a zero 
         diceImg1.innerHTML = `<img src="${gameData1.dice[Math.floor(Math.random() * 5)]}">`; //randomize the images, 5 is the length of the array
-        gameData1.score = gameData1.roll + gameData1.score; // add the roll points to the current score
-        score1.innerHTML = gameData1.score; //show the current score
-        console.log(gameData1); 
-
 
         // first make sure you get the value after the dice has been thrown
         // then store the value
@@ -239,7 +237,7 @@
             // put show the current score here
             setTimeout(setUpTurn, 3000);
         }
-        if (diceImg1 === gameData1.dice[1]) {
+        else if (diceImg1 === gameData1.dice[1]) {
             console.log("minus 2");
             message1.innerHTML += '<p>A wild pickachu appears, it electrocuted you making you lose 1 point</p>';
             gameData1.roll = -2; //set the roll points to -2
@@ -247,7 +245,7 @@
             // put show the current score here
             setTimeout(setUpTurn, 3000);
         }
-        if (diceImg1 === [gameData1.dice2]) {
+        else if (diceImg1 === gameData1.dice[2]) {
             console.log("plus 2");
             message1.innerHTML += '<p>A wild snorlax appears and hugs you giving you 2 point</p>';
             gameData1.roll = 2; //set the roll points to 2
@@ -255,7 +253,7 @@
             // put show the current score here
             setTimeout(setUpTurn, 3000);
         }
-        if (diceImg1 === gameData1.dice[3]) {
+        else if (diceImg1 === gameData1.dice[3]) {
             console.log("plus 3");
             message1.innerHTML += '<p>A wild charmander appears, the flames are so warm it gave you 3 point</p>';
             gameData1.roll = 3; //set the roll points to 3
@@ -271,6 +269,10 @@
             // put show the current score here
             setTimeout(setUpTurn, 3000);
         }
+
+        gameData1.score = gameData1.roll + gameData1.score; // add the roll points to the current score
+        score1.innerHTML = gameData1.score; //show the current score
+        console.log(gameData1); 
 
         checkWinningCondition();
     };
